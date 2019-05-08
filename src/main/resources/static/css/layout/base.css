@@ -1,0 +1,120 @@
+.hp_container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 1440px;
+    min-height: 900px;
+    overflow: hidden;
+}
+.hp_container_topBar{
+    height: 82px;
+    background: url("../../images/headerBg.png") no-repeat center;
+    padding: 0 20px;
+}
+.topBar_left{
+    float: left;
+    line-height: 82px;
+    color: #ffffff;
+    font-size: 24px;
+}
+.plat_list {
+    padding-right: 39px;
+    margin-right: 48px;
+    position: relative;
+}
+.plat_list:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 12px;
+    bottom: 14px;
+    border-right: 1px solid rgba(255,255,255,0.3);
+}
+.plat_list li {
+    float: left;
+    width: 84px;
+    height: 82px;
+    color: #fff;
+    filter:Alpha(opacity=60);
+    opacity: 0.6;
+    font-size: 15px;
+    line-height: 37px;
+    padding-top: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.plat_list i {
+    display: block;
+    height: 22px;
+}
+.plat_list_icon1 {
+    background: url('../../images/headerIcon1.png') no-repeat center;
+}
+.plat_list_icon2 {
+    background: url('../../images/headerIcon2.png') no-repeat center;
+}
+.plat_list_icon3 {
+    background: url('../../images/headerIcon3.png') no-repeat center;
+}
+.plat_list_icon4 {
+    background: url('../../images/headerIcon4.png') no-repeat center;
+}
+.plat_list_icon5 {
+    background: url('../../images/headerIcon5.png') no-repeat center;
+}
+.plat_list li.active,
+.plat_list li:hover {
+    filter:Alpha(opacity=100);
+    opacity: 1;
+    background: url('../../images/platListBg.png') repeat;
+}
+.plat_list li.active .plat_list_icon1,
+.plat_list li:hover .plat_list_icon1 {
+    background: url('../../images/headerIcon1-2.png') no-repeat center;
+}
+.plat_list li.active .plat_list_icon2,
+.plat_list li:hover .plat_list_icon2  {
+    background: url('../../images/headerIcon2-2.png') no-repeat center;
+}
+.plat_list li.active .plat_list_icon3,
+.plat_list li:hover .plat_list_icon3  {
+    background: url('../../images/headerIcon3-2.png') no-repeat center;
+}
+.plat_list li.active .plat_list_icon4,
+.plat_list li:hover .plat_list_icon4  {
+    background: url('../../images/headerIcon4-2.png') no-repeat center;
+}
+.plat_list li.active .plat_list_icon5,
+.plat_list li:hover .plat_list_icon5  {
+    background: url('../../images/headerIcon5-2.png') no-repeat center;
+}
+.user_infor {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 82px;
+    background: url('../../images/headerIcon6.png') no-repeat left center;
+    padding-left: 24px;
+}
+.exit_icon {
+    display: inline-block;
+    font-size: 0;
+    width: 32px;
+    height: 82px;
+    background: url('../../images/headerIcon7.png') no-repeat center;
+    vertical-align: top;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.hp_container_content {
+    position: absolute;
+    top: 82px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background: #f8f8f8;
+    padding:0 20px;
+}

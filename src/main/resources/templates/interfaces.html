@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+    <title>南京市政府办公厅运维监控子系统</title>
+    <link rel="stylesheet" href="css/layout/reset.css">
+    <link rel="stylesheet" href="css/layout/base.css">
+    <link rel="stylesheet" href="js/plugins/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="css/master_sxr.css">
+    <link rel="stylesheet" href="css/debug.css">
+</head>
+<body>
+
+<div class="hp_container">
+    <!--头部-->
+    <div class="hp_container_topBar clearFix">
+        <div class="topBar_left">南京市政府综合协同办公平台运维监控子系统</div>
+        <div class="pull-right clearFix">
+            <ul class="plat_list pull-left">
+                <li onclick="goto('index')"><i class="plat_list_icon1"></i>总体情况</li>
+                <li onclick="goto('resources')"><i class="plat_list_icon2"></i>资源情况</li>
+                <li class="active" onclick="goto('interfaces')"><i class="plat_list_icon3"></i>接口情况</li>
+                <li onclick="goto('oa')"><i class="plat_list_icon4"></i>OA运维</li>
+                <li onclick="goto('gwpt')"><i class="plat_list_icon5"></i>办公平台</li>
+            </ul>
+            <div class="user_infor pull-left">
+                运维管理员
+                <i class="exit_icon"></i>
+            </div>
+        </div>
+    </div>
+    <!--内容区-->
+    <div class="hp_container_content">
+        <ul class="OA_file_list clearFix" id="main">
+        </ul>
+    </div>
+</div>
+
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/plugins/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/plugins/placeholder.js"></script>
+<script src="js/master_sxr.js"></script>
+<script src="js/njszf/interfaces.js"></script>
+</body>
+</html>

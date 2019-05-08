@@ -1,0 +1,27 @@
+*.pyc
+*.egg-info
+*.db
+*.db.old
+*.swp
+*.db-journal
+*.iml
+*.svnignore
+*.class
+
+.coverage
+.DS_Store
+.installed.cfg
+
+.idea/*
+.svn/*
+
+/out/
+/target/
+*/target
+*/target/
+/target/*
+target/*
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+/web_module/target/

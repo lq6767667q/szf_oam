@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+    <title>南京市政府办公厅运维监控子系统</title>
+    <link rel="stylesheet" href="css/layout/reset.css">
+    <link rel="stylesheet" href="css/layout/base.css">
+    <link rel="stylesheet" href="js/plugins/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="css/master_sxr.css">
+    <link rel="stylesheet" href="css/debug.css">
+</head>
+<body>
+
+<div class="hp_container">
+    <!--头部-->
+    <div class="hp_container_topBar clearFix">
+        <div class="topBar_left">南京市政府综合协同办公平台运维监控子系统</div>
+        <div class="pull-right clearFix">
+            <ul class="plat_list pull-left">
+                <li onclick="goto('index')"><i class="plat_list_icon1"></i>总体情况</li>
+                <li onclick="goto('resources')"><i class="plat_list_icon2"></i>资源情况</li>
+                <li onclick="goto('interfaces')"><i class="plat_list_icon3"></i>接口情况</li>
+                <li onclick="goto('oa')"><i class="plat_list_icon4"></i>OA运维</li>
+                <li class="active" onclick="goto('gwpt')"><i class="plat_list_icon5"></i>办公平台</li>
+            </ul>
+            <div class="user_infor pull-left">
+                运维管理员
+                <i class="exit_icon"></i>
+            </div>
+        </div>
+    </div>
+    <!--内容区-->
+    <div class="hp_container_content">
+        <ul class="OA_file_list clearFix">
+            <li>
+                <div class="OA_file_main OA_bg1">
+                    <div class="OA_rotate OA_rotate_bg1"></div>
+                    <div class="file_new">
+                        <div class="new_file_num"><span>32</span>件</div>
+                        <div class="new_file_txt">今日新增</div>
+                    </div>
+                    <ul class="file_all clearFix">
+                        <li>总数</li>
+                        <li><span>560</span>件</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="OA_file_main OA_bg2">
+                    <div class="OA_rotate OA_rotate_bg2"></div>
+                    <div class="file_new">
+                        <div class="new_file_num"><span>12</span>件</div>
+                        <div class="new_file_txt">今日新增</div>
+                    </div>
+                    <ul class="file_all clearFix">
+                        <li>总数</li>
+                        <li><span>232</span>件</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="OA_file_main OA_bg3">
+                    <div class="OA_rotate OA_rotate_bg3"></div>
+                    <div class="file_new">
+                        <div class="new_file_num"><span>4</span>件</div>
+                        <div class="new_file_txt">今日新增</div>
+                    </div>
+                    <ul class="file_all clearFix">
+                        <li>总数</li>
+                        <li><span>87</span>件</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="OA_file_main OA_bg4">
+                    <div class="OA_rotate OA_rotate_bg4"></div>
+                    <div class="file_new">
+                        <div class="new_file_num"><span>9</span>件</div>
+                        <div class="new_file_txt">今日新增</div>
+                    </div>
+                    <ul class="file_all clearFix">
+                        <li>总数</li>
+                        <li><span>200</span>件</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="OA_file_main OA_bg5">
+                    <div class="OA_rotate OA_rotate_bg5"></div>
+                    <div class="file_new">
+                        <div class="new_file_num"><span>32</span>件</div>
+                        <div class="new_file_txt">今日新增</div>
+                    </div>
+                    <ul class="file_all clearFix">
+                        <li>总数</li>
+                        <li><span>560</span>件</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="OA_file_main OA_bg6">
+                    <div class="OA_rotate OA_rotate_bg6"></div>
+                    <div class="file_new">
+                        <div class="new_file_num"><span>40</span>件</div>
+                        <div class="new_file_txt">今日新增</div>
+                    </div>
+                    <ul class="file_all clearFix">
+                        <li>总数</li>
+                        <li><span>980</span>件</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="OA_file_main OA_bg7">
+                    <div class="OA_rotate OA_rotate_bg7"></div>
+                    <div class="file_new">
+                        <div class="new_file_num"><span>40</span>件</div>
+                        <div class="new_file_txt">今日新增</div>
+                    </div>
+                    <ul class="file_all clearFix">
+                        <li>总数</li>
+                        <li><span>980</span>件</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <h2 class="system_title">选择人员登录</h2>
+        <div class="user_login_main">
+            <div class="login_left">
+                <div class="login_search">
+                    <input type="text" placeholder="在这里进行搜索…" onkeyup="search()" id="searchinput">
+                    <i></i>
+                </div>
+                <ul class="role_list addScroll width100">
+                    <div id="depts"></div>
+                </ul>
+            </div>
+            <div class="login_other">
+                <div class="login_left width65 addScroll">
+                    <ul class="role_name width25 role_center" id="deptsLevel2">
+                    </ul>
+                </div>
+                <div class="login_other addScroll">
+                    <ul class="role_name width50" id="users">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/plugins/ChinesePY.js"></script>
+<script src="js/plugins/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/plugins/placeholder.js"></script>
+<script src="js/master_sxr.js"></script>
+<script src="js/njszf/gwpt.js"></script>
+</body>
+</html>

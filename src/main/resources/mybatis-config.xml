@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org/DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="jdbcTypeForNull" value="NULL"/>
+        <setting name="safeResultHandlerEnabled" value="false"/>
+        <setting name="callSettersOnNulls" value="true"/>
+    </settings>
+
+    <!-- 实体类,简称 -设置别名 -->
+    <typeAliases>
+        <typeAlias alias="JSON" type="com.alibaba.fastjson.JSONObject"/>
+    </typeAliases>
+
+    <!--
+        说明：如果xxMapper.xml配置文件放在和xxMapper.java统一目录下，mappers也可以省略，因为org.mybatis.spring.mapper.MapperFactoryBean默认会去查找与xxMapper.java相同目录和名称的xxMapper.xml
+    -->
+    <!--<mappers>-->
+        <!--<mapper resource="com/skytech/project/mapper/TestMapper.xml" />-->
+    <!--</mappers>-->
+
+    <plugins>
+        <!-- com.github.pagehelper为PageHelper类所在包名 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!-- 方言 -->
+            <!-- 该参数默认为false -->
+            <!-- 设置为true时，使用RowBounds分页会进行count查询 -->
+            <property name="rowBoundsWithCount" value="true"/>
+        </plugin>
+    </plugins>
+
+</configuration>

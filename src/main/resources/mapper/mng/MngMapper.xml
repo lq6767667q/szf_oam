@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.haiyu.manager.dao.mng.MngMapper">
+
+	<resultMap id="listData" type="JSON">
+		<result column="pk" property="pk" jdbcType="VARCHAR"></result>
+		<result column="dept_name" property="dept_name" jdbcType="VARCHAR"></result>
+	</resultMap>
+
+	<resultMap id="listDataUser" type="JSON">
+		<result column="pk" property="pk" jdbcType="VARCHAR"></result>
+		<result column="user_name" property="user_name" jdbcType="VARCHAR"></result>
+		<result column="loginid" property="loginid" jdbcType="VARCHAR"></result>
+	</resultMap>
+
+	<select id="getBgtDept" resultMap="listData">
+		<![CDATA[select * from (
+		select  t.*,level as tl
+		from sys_dept t
+		start with pk = (select pk from sys_dept where dept_name = '市政府办公厅')
+		connect by prior pk = f_dept_id
+		) t where tl <> 1 and use_flag =1 order by sort_flag]]>
+	</select>
+
+	<select id="getExDept" resultMap="listData">
+		<![CDATA[
+			select * from (
+			select  t.*,level as tl
+			  from sys_dept t
+			 start with pk = #{deptid}
+			connect by prior pk = f_dept_id
+			) t where tl = 2 and dept_name <> '市政府办公厅' order by sort_flag
+			]]>
+	</select>
+
+	<select id="getBgtUser" resultMap="listDataUser">
+		<![CDATA[ select * from sys_user where dept_id =#{deptid} and use_flag =1 order by sort_flag  ]]>
+	</select>
+
+	<select id="getExUser" resultMap="listDataUser">
+		<![CDATA[ select * from sys_user where dept_id =#{deptid} and use_flag =1 order by sort_flag  ]]>
+	</select>
+
+</mapper>

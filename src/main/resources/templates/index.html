@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+    <title>南京市政府办公厅运维监控子系统</title>
+    <link rel="stylesheet" href="css/layout/reset.css">
+    <link rel="stylesheet" href="css/layout/base.css">
+    <link rel="stylesheet" href="js/plugins/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="css/master_sxr.css">
+    <link rel="stylesheet" href="css/debug.css">
+</head>
+<body>
+
+<div class="hp_container">
+    <!--头部-->
+    <div class="hp_container_topBar clearFix">
+        <div class="topBar_left">南京市政府综合协同办公平台运维监控子系统</div>
+        <div class="pull-right clearFix">
+            <ul class="plat_list pull-left">
+                <li class="active" onclick="goto('index')"><i class="plat_list_icon1"></i>总体情况</li>
+                <li onclick="goto('resources')"><i class="plat_list_icon2"></i>资源情况</li>
+                <li onclick="goto('interfaces')"><i class="plat_list_icon3"></i>接口情况</li>
+                <li onclick="goto('oa')"><i class="plat_list_icon4"></i>OA运维</li>
+                <li onclick="goto('gwpt')"><i class="plat_list_icon5"></i>办公平台</li>
+            </ul>
+            <div class="user_infor pull-left">
+                运维管理员
+                <i class="exit_icon"></i>
+            </div>
+        </div>
+    </div>
+    <!--内容区-->
+    <div class="hp_container_content">
+        <div class="condition_height1 clearFix">
+            <div class="width37 serve_condition">
+                <h2 class="system_title">服务器情况<span id="nowdate"></span></h2>
+                <div class="serve_main addScroll" >
+                    <div id="pcstatus"></div>
+                </div>
+            </div>
+            <div class="total_condition">
+                <h2 class="system_title">总体情况</h2>
+                <div class="serve_main">
+                    <div class="circle_main">
+                        <div class="small_circle">
+                        </div>
+                        <div class="big_circle">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="condition_height2">
+            <div class="width37 serve_condition">
+                <h2 class="system_title">数据库情况<span></span></h2>
+                <div class="serve_main data_condition addScroll" >
+                    <ul class="data_condition_list" id="dbStatus">
+                    </ul>
+                </div>
+            </div>
+            <div class="total_condition">
+                <ul class="visit_list">
+                    <li>
+                        <div>
+                            <h2 class="system_title">OA<span>（访问799）</span></h2>
+                            <div class="serve_main visit_condition">
+                                <div class="each_visit_condition visit_icon1">
+                                    拟文数量<span class="each_visit_num">779</span><span class="each_visit_unit">件</span><span class="each_visit_contrast">18</span>
+                                </div>
+                                <div class="each_visit_condition visit_icon2">
+                                    收文数量<span class="each_visit_num">812</span><span class="each_visit_unit">件</span><span class="each_visit_contrast">20</span>
+                                </div>
+                                <div class="each_visit_condition visit_icon3">
+                                    通知会议<span class="each_visit_num">51</span><span class="each_visit_unit">件</span><span class="each_visit_contrast">4</span>
+                                </div>
+                                <div class="each_visit_condition visit_icon4">
+                                    信息数量<span class="each_visit_num">101</span><span class="each_visit_unit">件</span><span class="each_visit_contrast">11</span>
+                                </div>
+                                <div class="each_visit_condition visit_icon5">
+                                    材料数量<span class="each_visit_num">230</span><span class="each_visit_unit">件</span><span class="each_visit_contrast down">13</span>
+                                </div>
+                                <div class="each_visit_condition visit_icon6">
+                                    登录日志<span class="each_visit_num">988</span><span class="each_visit_unit">件</span><span class="each_visit_contrast">90</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h2 class="system_title">公务平台<span>（访问289）</span></h2>
+                            <div class="serve_main visit_condition">
+                                <div class="each_visit_condition visit_icon1">
+                                    拟文数量<span class="each_visit_num">779</span><span class="each_visit_unit">件</span><span class="each_visit_contrast">18</span>
+                                </div>
+                                <div class="each_visit_condition visit_icon2">
+                                    收文数量<span class="each_visit_num">812</span><span class="each_visit_unit">件</span><span class="each_visit_contrast">20</span>
+                                </div>
+                                <div class="each_visit_condition visit_icon3">
+                                    通知会议<span class="each_visit_num">51</span><span class="each_visit_unit">件</span><span class="each_visit_contrast">4</span>
+                                </div>
+                                <div class="each_visit_condition visit_icon4">
+                                    信息数量<span class="each_visit_num">101</span><span class="each_visit_unit">件</span><span class="each_visit_contrast">11</span>
+                                </div>
+                                <div class="each_visit_condition visit_icon5">
+                                    材料数量<span class="each_visit_num">230</span><span class="each_visit_unit">件</span><span class="each_visit_contrast down">13</span>
+                                </div>
+                                <div class="each_visit_condition visit_icon6">
+                                    登录日志<span class="each_visit_num">988</span><span class="each_visit_unit">件</span><span class="each_visit_contrast">90</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/plugins/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/plugins/placeholder.js"></script>
+<script src="js/master_sxr.js"></script>
+<script src="js/njszf/index.js"></script>
+<script>
+    for(var k=0;k<$('svg').length;k++){
+        circle(2*k+1,k,'.serve_perc',40);
+    }
+</script>
+</body>
+</html>

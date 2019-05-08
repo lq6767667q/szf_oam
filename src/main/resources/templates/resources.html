@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+    <title>南京市政府办公厅运维监控子系统</title>
+    <link rel="stylesheet" href="css/layout/reset.css">
+    <link rel="stylesheet" href="css/layout/base.css">
+    <link rel="stylesheet" href="js/plugins/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="css/master_sxr.css">
+    <link rel="stylesheet" href="css/debug.css">
+</head>
+<body>
+
+<div class="hp_container">
+    <!--头部-->
+    <div class="hp_container_topBar clearFix">
+        <div class="topBar_left">南京市政府综合协同办公平台运维监控子系统</div>
+        <div class="pull-right clearFix">
+            <ul class="plat_list pull-left">
+                <li onclick="goto('index')"><i class="plat_list_icon1"></i>总体情况</li>
+                <li class="active" onclick="goto('resources')"><i class="plat_list_icon2"></i>资源情况</li>
+                <li onclick="goto('interfaces')"><i class="plat_list_icon3"></i>接口情况</li>
+                <li onclick="goto('oa')"><i class="plat_list_icon4"></i>OA运维</li>
+                <li onclick="goto('gwpt')"><i class="plat_list_icon5"></i>办公平台</li>
+            </ul>
+            <div class="user_infor pull-left">
+                运维管理员
+                <i class="exit_icon"></i>
+            </div>
+        </div>
+    </div>
+    <!--内容区-->
+    <div class="hp_container_content" style="padding-bottom: 20px;">
+        <div class="half_height">
+            <h2 class="system_title">应用服务器情况</h2>
+            <table width="100%" cellpadding="0" cellspacing="0" class="condition_th">
+                <tr>
+                    <th width="5.8%" class="center">序号</th>
+                    <th width="8.6%">服务器地址</th>
+                    <th width="25%">服务器用途</th>
+                    <th width="18.4%">内存使用情况</th>
+                    <th class="center">CPU使用情况</th>
+                    <th width="24.4%">硬盘使用情况</th>
+                </tr>
+            </table>
+            <div class="condition_td addScroll">
+                <table width="100%" cellspacing="0" cellpadding="0" id="resourcestop">
+                </table>
+            </div>
+        </div>
+        <div class="half_height">
+            <h2 class="system_title">数据库情况</h2>
+            <table width="100%" cellpadding="0" cellspacing="0" class="condition_th condition_th2">
+                <tr>
+                    <th width="11.3%" class="center">序号</th>
+                    <th width="20.7%">数据库地址</th>
+                    <th>数据库用途</th>
+                    <th width="43.5%">表空间情况</th>
+                </tr>
+            </table>
+            <div class="condition_td condition_td2 addScroll">
+                <table width="100%" cellspacing="0" cellpadding="0" id="dbStatus">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/plugins/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/plugins/placeholder.js"></script>
+<script src="js/master_sxr.js"></script>
+<script src="js/njszf/resources.js"></script>
+
+<script>
+    for(var k=0;k<$('svg').length;k++){
+        circle(2*k+1,k,'.rotate_circle span',18);
+    }
+</script>
+</body>
+</html>

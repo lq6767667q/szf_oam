@@ -1,0 +1,19 @@
+server:
+  port: 8102
+
+
+spring:
+  application:
+      name: oam
+
+  thymeleaf:
+      cache: false
+#      mode: HTML5
+#      encoding: UTF-8
+#      content-type: text/html
+
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+
+#设置静态资源路径，多个以逗号分隔
+spring.resources.static-locations: classpath:static/,file:static/
